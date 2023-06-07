@@ -1,14 +1,9 @@
 def caesar_cypher(string, key)
 
     charArray=string.split('')
-    #charArray.each {|char| puts char + " in ascii: " + (char.ord+key).chr}
     charArray.map! do |char|
-        #puts ("a".."z").to_a
         if ("a".."z").to_a.include?(char) or ("A".."Z").to_a.include?(char)
             char_ascii=char.ord+key
-            #puts " test " 
-            #puts char + " test " + char_ascii.to_s
-
             if (char==char.upcase and char_ascii>90) or
                 (char!=char.upcase  and char_ascii>122)
                 
