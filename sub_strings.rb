@@ -13,13 +13,13 @@ p dictionary
 
 puts 'Test 1: '
 string = 'below'
-puts 'String: ' + string
+puts "String: #{string}"
 puts 'Result: '
 
 p substrings(string, dictionary)
 
 puts 'Test 2: '
 string = "Howdy partner, sit down! How's it going?"
-puts 'String: ' + string
+puts "String: #{string}"
 puts 'Result: '
 p substrings(string, dictionary)

@@ -1,29 +1,28 @@
+# frozen_string_literal: true
+
 def caesar_cypher(string, key)
-  charArray = string.split('')
-  charArray.map! do |char|
-    if ('a'..'z').to_a.include?(char) or ('A'..'Z').to_a.include?(char)
+  char_array = string.split('')
+  char_array.map! do |char|
+    if ('a'..'z').to_a.include?(char) || ('A'..'Z').to_a.include?(char)
       char_ascii = char.ord + key
-      if (char == char.upcase and char_ascii > 90) or
-         (char != char.upcase and char_ascii > 122)
+      if ((char == char.upcase) && (char_ascii > 90)) ||
+         ((char != char.upcase) && (char_ascii > 122))
 
         char_ascii -= 26
 
-      elsif char == char.upcase and char_ascii < 65 or
-            char != char.upcase and char_ascii < 97
+      elsif ((char == char.upcase) && (char_ascii < 65) ||
+            (char != char.upcase)) && (char_ascii < 97)
 
         char_ascii += 26
 
       end
 
       char = char_ascii.chr
-      char
-    else
-
-      char
     end
+    char
   end
 
-  charArray.join('')
+  char_array.join('')
 end
 
 puts 'Enter string you want to cypher:'

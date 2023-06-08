@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 def stock_picker(stocks_schedule)
   # making sure array length fits
   return 'Wrong Input' unless stocks_schedule.length > 2
@@ -22,7 +24,7 @@ def stock_picker(stocks_schedule)
     end
   end
 
-  picked_stocks = [stock_buy_index, stock_sell_index]
+  [stock_buy_index, stock_sell_index]
 end
 
 p stock_picker([17, 3, 6, 9, 15, 8, 6, 1, 10])
