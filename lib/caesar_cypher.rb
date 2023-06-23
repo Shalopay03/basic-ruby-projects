@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-def caesar_cypher(string, key)
+def cypher(string, key = 0)
   char_array = string.split('')
   char_array.map! do |char|
     if ('a'..'z').to_a.include?(char) || ('A'..'Z').to_a.include?(char)
@@ -25,10 +25,13 @@ def caesar_cypher(string, key)
   char_array.join('')
 end
 
-puts 'Enter string you want to cypher:'
-string = gets
+# runs code only if called from ruby command and not rspec
+if __FILE__ == $0
+  puts 'Enter string you want to cypher:'
+  string = gets
 
-puts 'Enter key:'
-key = gets
+  puts 'Enter key:'
+  key = gets
 
-puts caesar_cypher(string, key.to_i)
+  puts cypher(string, key.to_i)
+end
