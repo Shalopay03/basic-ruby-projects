@@ -12,6 +12,9 @@ describe '#cypher' do
   it 'returns nil when given number' do
     expect(cypher(10)).to eql(nil)
   end
+  it 'works with just letters' do
+    expect(cypher('abcde', 1)).to eql('bcdef')
+  end
   it 'does not change non letters' do
     expect(cypher('asd45s', 1)).to eql('bte45t')
   end
