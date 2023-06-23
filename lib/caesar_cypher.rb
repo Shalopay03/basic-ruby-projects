@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
 def cypher(string, key = 0)
-  return string unless string.class == String
+  return nil unless string.instance_of?(String)
+
   char_array = string.split('')
   char_array.map! do |char|
     if ('a'..'z').to_a.include?(char) || ('A'..'Z').to_a.include?(char)
