@@ -15,6 +15,9 @@ describe '#cypher' do
   it 'works with just letters' do
     expect(cypher('abcde', 1)).to eql('bcdef')
   end
+  it 'jumps from the end of alphabet to beginning' do
+    expect(cypher('abcdez', 1)).to eql('bcdefa')
+  end
   it 'does not change non letters' do
     expect(cypher('asd45s', 1)).to eql('bte45t')
   end
